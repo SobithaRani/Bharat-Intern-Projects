@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../style.css">
+  <title>Transaction History</title>
+</head>
+<style>
+   body {
+    background-color: #f6f6f6; /* Light grey background */
+    color: #333; /* Dark text */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  h1 {
+    color: #4285f4; /* Blue */
+    text-align: center;
+    margin: 25px 0;
+  }
+  .main {
+    width: 80%;
+    margin: 0 auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  }
+  th, td {
+    border: 1px solid #ccc; /* Light grey border */
+    padding: 12px;
+    text-align: left;
+  }
+  th {
+    background-color: #4285f4; /* Blue */
+    color: white;
+  }
+  tr:nth-child(even) {
+    background-color: #f9f9f9; /* Off-white for even rows */
+  }
+  tr:nth-child(odd) {
+    background-color: #ffffff; /* White for odd rows */
+  }
+  tr:hover {
+    background-color: #f0f0f0; /* Light grey on hover */
+  }
+  .total-row {
+    background-color: #4285f4; /* Blue for total row */
+    color: white;
+  }
+  .total-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4285f4; /* Blue color */
+    color: white;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  .total-value {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f0f0f0; /* Light grey background */
+    border-radius: 5px;
+    margin-right: 3.4cm;
+  }
+</style>
+<body>
+  <div class="main">
+    <h1>Transaction History</h1>
+    <table class="child">
+      <tr>
+        <th>Sno</th>
+        <th>Description</th>
+        <th>Amount</th>
+        <th>Date</th>
+      </tr>
+      <% 
+      let totalAmount = 0; // Variable to store the total amount 
+      transactions.forEach((transaction, index) => { 
+        totalAmount += transaction.amount;
+      %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= transaction.description %></td>
+        <td>₹ <%= transaction.amount %></td>
+        <td><%= transaction.date.toLocaleDateString() %></td>
+      </tr>
+      <% }); %>
+    </table>
+    <!-- Total amount label and value displayed below the table in the center -->
+    <div style="text-align: center; margin-top: 20px;">
+      <!-- Displaying total amount label in a box -->
+      <div class="total-label">Total Amount:</div>
+      <!-- Displaying total amount value in another box -->
+      <div class="total-value"><strong>₹ <%= totalAmount %>/-</strong></div>
+    </div>
+  </div>
+</body>
+</html>
