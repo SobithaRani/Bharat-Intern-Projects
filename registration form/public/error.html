@@ -1,40 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link
-      rel="shortcut icon"
-      href="https://th.bing.com/th/id/OIP.kwE8IapDUTtylieeRnn2YAHaHa?pid=ImgDet&rs=1"
-      type="image/x-icon"
-    />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Registration Error</title>
-  </head>
-  <body
-  >
-    <style>
-      /* Apply glassmorphism effect to the container */
-      .container {
-        background: rgba(255, 255, 255, 0.655); /* Set a semi-transparent white background */
-        backdrop-filter: blur(10px); /* Apply a blur effect to the background */
-        border-radius:15px; /* Rounded corners */
-        padding: 30px;
-        text-align: center;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="shortcut icon" href="https://th.bing.com/th/id/OIP.kwE8IapDUTtylieeRnn2YAHaHa?pid=ImgDet&rs=1" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration Error</title>
+  <style>
+    /* Global styles */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #eef4dca3;
+    }
 
-      /* Center the container vertically and horizontally */
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh; /* Ensure full viewport height */
-        background-color: rgb(188, 188, 188);
+    .container {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(148, 202, 232, 0.1);
+      animation: slideIn 1s ease-in-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
       }
-    </style>
-    <div class="container">
-      <h1>Registration Error</h1>
-      <p>There was an error during registration. Please try again.</p>
-    </div>
-  </body>
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Error message styles */
+    h1 {
+      color: #f44336;
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    p {
+      color: #666;
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Registration Error</h1>
+    <p>There was an error during registration. Please try again.</p>
+  </div>
+</body>
 </html>
